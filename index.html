@@ -12,28 +12,219 @@
         <h1>Food Store Inventory</h1>
     </header>
     <main>
-        <section>
+        <section class="inputSection">
+            <div class="inputForm">
             <h2>Input Inventory Items</h2>
             <form class="food-inventory__form">
-                <label class="item__label">
-                    Item
+                <label for="itemName" class="item__label">
+                    Item:
                     <br />
+                </label>
                     <input
                       type="text"
                       class="item__input"
-                      id="itemInput"
+                      id="itemName"
                       name="itemName"
                       placeholder="Enter Item Name here.."
                       required
                     />
+                  <br>
+                  <label for="itemPrice" class="item__label">
+                    Price:
+                    <br />
+                </label>
+                    <input
+                      type="text"
+                      class="item__input"
+                      id="itemPrice"
+                      name="itemPrice"
+                      placeholder="Enter Item Price here.."
+                      required
+                    />
+                  <br>
+                  <label for="brandName" class="item__label">
+                    Brand:
+                    <br />
+                </label>
+                    <input
+                      type="text"
+                      class="item__input"
+                      id="brandName"
+                      name="brandName"
+                      placeholder="Enter Brand Name here.."
+                      required
+                    />
+                  <br>
+                  <label for="imageUpload" class="item__label">
+                    Upload Image:
+                    <br />
+                </label>
+                <input
+                    type="file"
+                    class="item__input"
+                    id="imageUpload"
+                    name="imageUpload"
+                    accept="image/*"
+                    onchange="handleImageUpload(event)"
+                    required
+                />
+                <br />
+                <img id="previewImage" src="#" alt="Preview Image" style="max-width: 200px; display: none;" />
+                
+                  <label for="UPCInput" class="item__label">
+                    UPC:
+                    <br />
+                </label>
+                    <input
+                      type="text"
+                      class="item__input"
+                      id="UPCInput"
+                      name="UPCInput"
+                      placeholder="Enter UPC # here.."
+                      required
+                    />
+                  <br>
+                  <label for="SKUInput" class="item__label">
+                    SKU:
+                    <br />
+                </label>
+                    <input
+                      type="text"
+                      class="item__input"
+                      id="SKUInput"
+                      name="SKUInput"
+                      placeholder="Enter SKU # here.."
+                      required
+                    />
+                  <br>
+                  <label for="department" class="in-stock__label">
+                    Department
+                    <br />
                   </label>
+                <select name="department" id="department">
+                    <option value="" selected disabled hidden>Choose here</option>
+                    <option value="coffeebar">Coffee Bar</option>
+                    <option value="dairy">Dairy</option>
+                    <option value="deli">Deli</option>
+                    <option value="drygoods">Dry Goods</option>
+                    <option value="frozen">Frozen Foods</option>
+                    <option value="produce">Produce</option>
+                    <option value="prepared">Prepared Foods</option>
+                    <option value="refrigerated">Refrigerated</option>
+                </select>
+                <br>
+                <label for="category" class="in-stock__label">
+                    <br />
+                  </label>
+                  <label for="stockCount" class="in-stock__label">
+                    In Stock:
+                    <br />
+                  </label>
+                    <input
+                      type="text"
+                      class="stock__input"
+                      id="stockCount"
+                      name="stockCount"
+                      placeholder="Enter Stock Count here.."
+                      required
+                    />
+                    <br>
+                    <label for="stockOnFloorInput" class="in-stock__label">
+                        On Floor:
+                        <br />
+                      </label>
+                        <input
+                          type="text"
+                          class="stock__input"
+                          id="stockOnFloorInput"
+                          name="stockOnFloorInput"
+                          placeholder="Enter Stock On Floor here.."
+                          required
+                        />
+                        <br>
+                        <label for="stockInBackRoomInput" class="in-stock__label">
+                            In Back Room:
+                            <br />
+                          </label>
+                            <input
+                              type="text"
+                              class="stock__input"
+                              id="stockInBackRoomInput"
+                              name="stockInBackRoomInput"
+                              placeholder="Enter Stock In Back Room here.."
+                              required
+                            />
+                            <br>
+
+
+                      <label for="orderInput" class="in-stock__label">
+                        Order:
+                        <br />
+                    </label>
+                    <input
+                        type="text"
+                        class="stock__input"
+                        id="orderInput"
+                        name="orderInput"
+                        placeholder="Units to Order.."
+                    />
+                    <br>
+                    <label for="orderPlacedInput" class="in-stock__label">
+                        Order Placed:
+                        <br />
+                    </label>
+                    <input
+                        type="text"
+                        class="stock__input"
+                        id="orderPlacedInput"
+                        name="orderPlacedInput"
+                        placeholder="Modify Order Placed here.."
+                    />
+                    <br>
+                    <label for="inTransitInput" class="in-stock__label">
+                        In-Transit Inventory:
+                        <br />
+                    </label>
+                    <input
+                        type="text"
+                        class="stock__input"
+                        id="inTransitInput"
+                        name="inTransitInput"
+                        placeholder="Enter In-Transit Inventory here.."
+                    />
+                    <br>
+
+                    <button type="submit">Submit</button>
+
 
             </form>
+        </div>
 
         </section>
-        <section>
-
+        <section class="itemSection">
+            <table class="itemTable">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Item Image</th>
+                        <th>Price</th>
+                        <th>Brand</th>
+                        <th>UPC</th>
+                        <th>SKU</th>
+                        <th>Department</th>
+                        <th>In Stock</th>
+                        <th>On Floor</th>
+                        <th>In Back Room</th>
+                        <th>Order</th>
+                        <th>Order Placed</th>
+                        <th>In-Transit Inventory</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </section>
+
     </main>
     
 </body>
